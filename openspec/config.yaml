@@ -1,0 +1,35 @@
+# openspec/config.yaml
+schema: spec-driven
+
+context: |
+  Tech stack: Astro 5.x + Tailwind CSS 4.x
+  Language: TypeScript (strict mode)
+  Architecture: Astro pages/layouts/components pattern
+  Build: Vite (via Astro)
+  Styling: Tailwind CSS v4 (Vite plugin)
+  Testing: None configured
+  Linting: None configured
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - Identify affected pages, components, and layouts
+  specs:
+    - Use Given/When/Then format for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Include component hierarchy diagrams
+    - Document architecture decisions with rationale
+  tasks:
+    - Group tasks by phase (infrastructure, implementation, testing)
+    - Use hierarchical numbering (1.1, 1.2, etc.)
+    - Keep tasks small enough to complete in one session
+  apply:
+    - Follow Astro conventions (pages/, layouts/, components/)
+    - Use Tailwind utility classes for all styling (CSS only for animations)
+    - Use TypeScript strict mode
+  verify:
+    - Run astro build to verify no compilation errors
+    - Compare implementation against every spec scenario
+  archive:
+    - Warn before merging destructive deltas (large removals)
