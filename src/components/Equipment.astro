@@ -1,0 +1,47 @@
+---
+const equipment = [
+  {
+    name: 'Escáner Automotriz',
+    description: 'Escáner multimarca para lectura de códigos OBD, diagnóstico de módulos y análisis de datos en tiempo real de todos los sistemas del vehículo.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 10 10 7 13 12 17 8"/></svg>`,
+  },
+  {
+    name: 'Osciloscopio',
+    description: 'Análisis de señales eléctricas en tiempo real para diagnóstico preciso de sensores, actuadores y circuitos electrónicos del vehículo.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+  },
+  {
+    name: 'Cámara Endoscópica',
+    description: 'Inspección interna de motores sin desarmar, permitiendo visualizar el estado de cilindros, válvulas y componentes internos con precisión.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`,
+  },
+  {
+    name: 'Banco de Pruebas',
+    description: 'Pruebas especializadas para inyectores, alternadores y componentes eléctricos, asegurando un diagnóstico preciso antes de cualquier reparación.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-10 w-10"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>`,
+  },
+];
+---
+
+<section id="equipo" class="py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-4 lg:px-8">
+    <div class="text-center mb-16" data-animate="fade-up">
+      <h2 class="text-section-title font-bold text-neutral-800 mb-4">Nuestro Equipo de Diagnóstico</h2>
+      <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+        Contamos con tecnología de última generación que garantiza certeza en cada diagnóstico, eliminando el costoso método de prueba y error.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" data-animate="stagger">
+      {equipment.map((item) => (
+        <div class="rounded-2xl bg-white p-6 lg:p-8 shadow-sm border border-neutral-200 text-center transition-all hover:shadow-md hover:border-brand-blue/30">
+          <div class="mb-5 inline-flex h-16 w-16 items-center justify-center rounded-full bg-brand-orange/10 text-brand-orange" data-animate="scale-in">
+            <Fragment set:html={item.icon} />
+          </div>
+          <h3 class="text-xl font-semibold text-neutral-800 mb-3">{item.name}</h3>
+          <p class="text-neutral-600 leading-relaxed text-sm">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

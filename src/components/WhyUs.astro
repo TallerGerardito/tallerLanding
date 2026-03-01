@@ -1,0 +1,47 @@
+---
+const advantages = [
+  {
+    title: 'Certeza Diagnóstica',
+    description: 'Eliminamos el costoso método de prueba y error. Con nuestro equipo especializado, identificamos la falla exacta antes de cualquier intervención. No paga por reparaciones innecesarias.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
+  },
+  {
+    title: 'Garantía Formal',
+    description: 'Política documentada de garantía en piezas y mano de obra que genera confianza. Respaldamos cada trabajo realizado con compromiso y responsabilidad.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  },
+  {
+    title: 'Precio Accesible',
+    description: 'Servicio de alta calidad a precio medio-accesible, competitivo frente a talleres de San Pedro Sula. Tecnología de punta sin costos elevados.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+  },
+  {
+    title: 'Tecnología Especializada',
+    description: 'Equipo de diagnóstico de última generación: escáner multimarca, osciloscopio, cámara endoscópica y banco de pruebas. Herramientas únicas en la zona.',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>`,
+  },
+];
+---
+
+<section id="por-que" class="py-20 lg:py-28 bg-neutral-100">
+  <div class="mx-auto max-w-7xl px-4 lg:px-8">
+    <div class="text-center mb-16" data-animate="fade-up">
+      <h2 class="text-section-title font-bold text-neutral-800 mb-4">¿Por Qué Elegirnos?</h2>
+      <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
+        Somos el único taller en San Manuel con equipo de diagnóstico avanzado completo y garantía formal de servicio.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" data-animate="stagger">
+      {advantages.map((item) => (
+        <div class="rounded-2xl bg-white p-6 lg:p-8 shadow-sm border border-neutral-200 text-center transition-all hover:shadow-md hover:border-brand-orange/30">
+          <div class="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand-blue/10 text-brand-blue">
+            <Fragment set:html={item.icon} />
+          </div>
+          <h3 class="text-lg font-semibold text-neutral-800 mb-2">{item.title}</h3>
+          <p class="text-neutral-600 leading-relaxed text-sm">{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
