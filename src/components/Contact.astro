@@ -43,9 +43,9 @@ const contactInfo = [
           href={item.href}
           target={item.external ? '_blank' : undefined}
           rel={item.external ? 'noopener' : undefined}
-          class="flex items-start gap-4 rounded-2xl bg-white p-6 shadow-sm border border-neutral-200 transition-all hover:shadow-md hover:border-brand-orange/30 group"
+          class="flex items-start gap-4 rounded-2xl bg-white p-6 shadow-sm border border-neutral-200 transition-all hover:shadow-md hover:border-brand-red/30 group"
         >
-          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue group-hover:bg-brand-orange/10 group-hover:text-brand-orange transition-colors">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-dark/10 text-brand-dark group-hover:bg-brand-red/10 group-hover:text-brand-red transition-colors">
             <Fragment set:html={item.icon} />
           </div>
           <div>
@@ -58,14 +58,14 @@ const contactInfo = [
 
     <!-- Business hours -->
     <div class="mt-12 max-w-md mx-auto text-center" data-animate="fade-up">
-      <div class="rounded-2xl bg-brand-blue p-6 text-white">
-        <svg class="h-8 w-8 mx-auto mb-3 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <div class="rounded-2xl bg-brand-dark p-6 text-white">
+        <svg class="h-8 w-8 mx-auto mb-3 text-brand-red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="12" cy="12" r="10" />
           <polyline points="12 6 12 12 16 14" />
         </svg>
         <h3 class="text-lg font-semibold mb-2">Horario de Atención</h3>
         <p class="text-white/80">Lunes a Sábado</p>
-        <p class="text-xl font-bold text-brand-orange">8:00 a.m. a 5:00 p.m.</p>
+        <p class="text-xl font-bold text-brand-red">8:00 a.m. a 5:00 p.m.</p>
       </div>
     </div>
   </div>

@@ -1,7 +1,14 @@
 ---
 const brands = [
-  'Toyota', 'Nissan', 'Mazda', 'Honda', 'Mitsubishi',
-  'Hyundai', 'Jeep', 'Ford', 'Chevrolet',
+  { name: 'Toyota', icon: '/icons/toyota.svg' },
+  { name: 'Nissan', icon: '/icons/nissan.svg' },
+  { name: 'Mazda', icon: '/icons/mazda.svg' },
+  { name: 'Honda', icon: '/icons/honda.svg' },
+  { name: 'Mitsubishi', icon: '/icons/mitsubishi.svg' },
+  { name: 'Hyundai', icon: '/icons/hyundai.svg' },
+  { name: 'Jeep', icon: '/icons/jeep.svg' },
+  { name: 'Ford', icon: '/icons/ford.svg' },
+  { name: 'Chevrolet', icon: '/icons/chevrolet.svg' },
 ];
 ---
 
@@ -16,12 +23,13 @@ const brands = [
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6" data-animate="stagger">
       {brands.map((brand) => (
-        <div class="flex items-center justify-center rounded-xl bg-white p-5 lg:p-6 shadow-sm border border-neutral-200 transition-all hover:shadow-md hover:border-brand-blue/30">
-          <span class="text-lg font-bold text-neutral-700">{brand}</span>
+        <div class="flex flex-col items-center justify-center gap-3 rounded-xl bg-white p-5 lg:p-6 shadow-sm border border-neutral-200 transition-all hover:shadow-md hover:border-brand-dark/30">
+          <img src={brand.icon} alt={brand.name} class="h-10 w-auto" />
+          <span class="text-sm font-semibold text-neutral-600">{brand.name}</span>
         </div>
       ))}
-      <div class="flex items-center justify-center rounded-xl bg-brand-orange/10 p-5 lg:p-6 border border-brand-orange/20">
-        <span class="text-lg font-bold text-brand-orange">y más...</span>
+      <div class="flex items-center justify-center rounded-xl bg-brand-red/10 p-5 lg:p-6 border border-brand-red/20">
+        <span class="text-lg font-bold text-brand-red">y más...</span>
       </div>
     </div>
   </div>
