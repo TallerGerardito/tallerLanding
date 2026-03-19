@@ -3,57 +3,60 @@ const testimonials = [
   {
     name: 'Carlos M.',
     rating: 5,
-    text: 'Excelente servicio. Llevé mi Toyota con una falla eléctrica que en otros talleres no pudieron resolver. En Taller Gerardito lo diagnosticaron con el escáner y osciloscopio en menos de una hora. Muy profesionales.',
+    text: 'Excelente servicio. Lleve mi Toyota con una falla electrica que en otros talleres no pudieron resolver. En Taller Gerardito lo diagnosticaron con el escaner y osciloscopio en menos de una hora. Muy profesionales.',
   },
   {
-    name: 'María L.',
+    name: 'Maria L.',
     rating: 5,
-    text: 'Lo que más me gusta es la honestidad. Don Gerardo me explicó exactamente qué tenía mi vehículo antes de hacer cualquier reparación. Los precios son justos y el trabajo queda garantizado.',
+    text: 'Lo que mas me gusta es la honestidad. Don Gerardo me explico exactamente que tenia mi vehiculo antes de hacer cualquier reparacion. Los precios son justos y el trabajo queda garantizado.',
   },
   {
     name: 'Roberto A.',
     rating: 5,
-    text: 'Mi Hyundai tenía problemas de transmisión. En San Pedro Sula me querían cobrar el doble. Aquí me lo resolvieron con garantía y a un precio accesible. Totalmente recomendado.',
+    text: 'Mi Hyundai tenia problemas de transmision. En San Pedro Sula me querian cobrar el doble. Aqui me lo resolvieron con garantia y a un precio accesible. Totalmente recomendado.',
   },
 ];
 
 const stars = (count: number) => '★'.repeat(count) + '☆'.repeat(5 - count);
 ---
 
-<section id="testimonios" class="py-20 lg:py-28 bg-neutral-100">
+<section id="testimonios" class="py-20 lg:py-28 bg-brand-dark">
   <div class="mx-auto max-w-7xl px-4 lg:px-8">
     <div class="text-center mb-16" data-animate="fade-up">
-      <h2 class="text-section-title font-bold text-neutral-800 mb-4">Lo Que Dicen Nuestros Clientes</h2>
-      <p class="text-lg text-neutral-600 max-w-2xl mx-auto">
-        La confianza de nuestros clientes es nuestra mejor carta de presentación.
+      <h2 class="text-section-title font-bold text-white mb-4">Lo Que Dicen Nuestros Clientes</h2>
+      <p class="text-section-subtitle text-zinc-400 max-w-2xl mx-auto">
+        La confianza de nuestros clientes es nuestra mejor carta de presentacion.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" data-animate="stagger">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5" data-animate="stagger">
       {testimonials.map((t) => (
-        <div class="rounded-2xl bg-white p-6 lg:p-8 shadow-sm border border-neutral-200">
-          <div class="text-brand-red text-xl mb-3 tracking-wider" aria-label={`${t.rating} de 5 estrellas`}>
+        <div class="rounded-2xl bg-brand-dark-mid/30 p-6 lg:p-8 border border-zinc-700/50 relative">
+          <!-- Decorative quote -->
+          <span class="absolute top-4 right-6 text-6xl font-serif text-brand-red/10 leading-none select-none" aria-hidden="true">"</span>
+
+          <div class="text-brand-red text-lg mb-4 tracking-wider" aria-label={`${t.rating} de 5 estrellas`}>
             {stars(t.rating)}
           </div>
-          <p class="text-neutral-600 leading-relaxed mb-4 italic">"{t.text}"</p>
+          <p class="text-zinc-300 leading-relaxed mb-6 text-sm relative z-10">"{t.text}"</p>
           <div class="flex items-center gap-3">
-            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-dark text-white font-bold text-sm">
+            <div class="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-brand-red to-brand-red-light text-white font-bold text-sm">
               {t.name.charAt(0)}
             </div>
-            <span class="font-semibold text-neutral-800">{t.name}</span>
+            <span class="font-semibold text-white text-sm">{t.name}</span>
           </div>
         </div>
       ))}
     </div>
 
-    <!-- Google Maps review CTA -->
+    <!-- CTA -->
     <div class="text-center mt-12" data-animate="fade-up">
-      <p class="text-neutral-600 mb-4">¿Ya nos visitaste? ¡Déjanos tu reseña en Google Maps!</p>
+      <p class="text-zinc-500 mb-4 text-sm">Ya nos visitaste? Agenda tu proxima cita</p>
       <a
-        href="https://wa.me/50489638660?text=Hola%2C%20me%20gustaría%20agendar%20una%20cita"
+        href="https://wa.me/50489638660?text=Hola%2C%20me%20gustaria%20agendar%20una%20cita"
         target="_blank"
         rel="noopener"
-        class="inline-flex items-center gap-2 rounded-lg bg-brand-dark px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark-light focus:outline-none focus:ring-2 focus:ring-brand-dark focus:ring-offset-2"
+        class="inline-flex items-center gap-2 rounded-xl bg-brand-red px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-red-light hover:scale-105 hover:shadow-lg hover:shadow-brand-red/25"
       >
         Agenda tu Cita
       </a>

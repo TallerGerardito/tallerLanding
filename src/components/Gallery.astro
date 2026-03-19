@@ -1,0 +1,146 @@
+---
+const galleryItems = [
+  { label: 'Diagnostico Electronico', gradient: 'from-red-900/40 to-zinc-800', aspect: 'aspect-[4/3]' },
+  { label: 'Reparacion de Motor', gradient: 'from-zinc-700 to-zinc-800', aspect: 'aspect-square' },
+  { label: 'Sistema Electrico', gradient: 'from-zinc-800 to-red-900/30', aspect: 'aspect-[3/4]' },
+  { label: 'Transmision Automatica', gradient: 'from-zinc-700 to-zinc-900', aspect: 'aspect-[4/3]' },
+  { label: 'Aire Acondicionado', gradient: 'from-red-900/30 to-zinc-700', aspect: 'aspect-square' },
+  { label: 'Cableado Electrico', gradient: 'from-zinc-800 to-zinc-700', aspect: 'aspect-[4/3]' },
+  { label: 'Programacion ECU', gradient: 'from-zinc-900 to-red-900/40', aspect: 'aspect-[3/4]' },
+  { label: 'Sistema de Frenos', gradient: 'from-zinc-700 to-zinc-800', aspect: 'aspect-square' },
+];
+---
+
+<section id="galeria" class="py-20 lg:py-28 bg-brand-dark-light">
+  <div class="mx-auto max-w-7xl px-4 lg:px-8">
+    <div class="text-center mb-16" data-animate="fade-up">
+      <h2 class="text-section-title font-bold text-white mb-4">Nuestro Trabajo</h2>
+      <p class="text-section-subtitle text-zinc-400 max-w-2xl mx-auto">
+        Resultados que hablan por si solos
+      </p>
+    </div>
+
+    <!-- Masonry grid -->
+    <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4" data-animate="stagger">
+      {galleryItems.map((item, index) => (
+        <button
+          type="button"
+          class={`gallery-item group relative w-full rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-red/5 break-inside-avoid block ${item.aspect}`}
+          data-index={index}
+          data-label={item.label}
+          aria-label={`Ver: ${item.label}`}
+        >
+          <div class={`absolute inset-0 bg-gradient-to-br ${item.gradient}`}></div>
+          <!-- Icon placeholder -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <svg class="h-12 w-12 text-white/10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+          <!-- Label overlay -->
+          <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
+            <p class="text-sm font-medium text-white">{item.label}</p>
+            <p class="text-xs text-zinc-400">Taller Gerardito</p>
+          </div>
+          <!-- Hover overlay -->
+          <div class="absolute inset-0 bg-brand-red/0 group-hover:bg-brand-red/10 transition-colors duration-300"></div>
+        </button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox dialog -->
+<dialog id="gallery-lightbox" class="bg-transparent backdrop:bg-brand-dark/90 backdrop:backdrop-blur-xl max-w-3xl w-full p-0 rounded-2xl">
+  <div class="relative bg-brand-dark-mid border border-zinc-700/50 rounded-2xl overflow-hidden">
+    <!-- Close button -->
+    <button id="lightbox-close" type="button" class="absolute top-4 right-4 z-10 h-10 w-10 flex items-center justify-center rounded-full bg-zinc-800/80 text-zinc-400 hover:text-white hover:bg-zinc-700 transition-colors" aria-label="Cerrar">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+
+    <!-- Image area -->
+    <div id="lightbox-content" class="aspect-video flex items-center justify-center">
+      <div id="lightbox-gradient" class="absolute inset-0 bg-gradient-to-br from-zinc-700 to-zinc-800"></div>
+      <div class="relative text-center p-8">
+        <svg class="h-16 w-16 text-white/10 mx-auto mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+        <p id="lightbox-label" class="text-xl font-semibold text-white"></p>
+        <p class="text-sm text-zinc-400 mt-1">Taller Gerardito</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="flex items-center justify-between p-4 border-t border-zinc-700/50">
+      <button id="lightbox-prev" type="button" class="flex items-center gap-2 px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors rounded-lg hover:bg-white/5" aria-label="Anterior">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Anterior
+      </button>
+      <span id="lightbox-counter" class="text-xs text-zinc-500 font-mono"></span>
+      <button id="lightbox-next" type="button" class="flex items-center gap-2 px-4 py-2 text-sm text-zinc-400 hover:text-white transition-colors rounded-lg hover:bg-white/5" aria-label="Siguiente">
+        Siguiente
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<script is:inline>
+  const dialog = document.getElementById('gallery-lightbox');
+  const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
+  const labelEl = document.getElementById('lightbox-label');
+  const counterEl = document.getElementById('lightbox-counter');
+  const items = document.querySelectorAll('.gallery-item');
+  let currentIndex = 0;
+
+  const gradients = [
+    'from-red-900/40 to-zinc-800',
+    'from-zinc-700 to-zinc-800',
+    'from-zinc-800 to-red-900/30',
+    'from-zinc-700 to-zinc-900',
+    'from-red-900/30 to-zinc-700',
+    'from-zinc-800 to-zinc-700',
+    'from-zinc-900 to-red-900/40',
+    'from-zinc-700 to-zinc-800',
+  ];
+
+  function updateLightbox(index) {
+    currentIndex = index;
+    const item = items[index];
+    labelEl.textContent = item.getAttribute('data-label');
+    counterEl.textContent = (index + 1) + ' / ' + items.length;
+  }
+
+  items.forEach((item) => {
+    item.addEventListener('click', () => {
+      const index = parseInt(item.getAttribute('data-index'));
+      updateLightbox(index);
+      dialog.showModal();
+    });
+  });
+
+  closeBtn.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    updateLightbox((currentIndex - 1 + items.length) % items.length);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    updateLightbox((currentIndex + 1) % items.length);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!dialog.open) return;
+    if (e.key === 'ArrowLeft') prevBtn.click();
+    if (e.key === 'ArrowRight') nextBtn.click();
+  });
+</script>

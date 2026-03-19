@@ -1,49 +1,84 @@
-<section id="nosotros" class="py-20 lg:py-28 bg-neutral-100">
+<section id="nosotros" class="py-20 lg:py-28 bg-brand-dark">
   <div class="mx-auto max-w-7xl px-4 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <!-- Text content -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <!-- Text content with timeline -->
       <div data-animate="fade-up">
-        <h2 class="text-section-title font-bold text-neutral-800 mb-6">Nuestra Historia</h2>
+        <h2 class="text-section-title font-bold text-white mb-8">Nuestra Historia</h2>
 
-        <p class="text-neutral-600 leading-relaxed mb-4">
-          Taller Gerardito nació hace <strong class="text-brand-dark">más de 10 años</strong> en el municipio de San Manuel, Cortés, fruto de la pasión y el conocimiento técnico de su fundador, <strong class="text-brand-dark">Gerardo García</strong>. Lo que comenzó como un pequeño espacio de trabajo orientado a la mecánica general, fue evolucionando hacia la especialización en sistemas electrónicos automotrices.
-        </p>
+        <!-- Timeline -->
+        <div class="relative border-l-2 border-brand-red/30 pl-8 space-y-8">
+          <div class="relative">
+            <div class="absolute -left-[41px] top-1 h-4 w-4 rounded-full bg-brand-red border-4 border-brand-dark"></div>
+            <p class="text-xs font-mono uppercase tracking-wider text-brand-red mb-1">2015 — Fundacion</p>
+            <p class="text-zinc-400 leading-relaxed text-sm">
+              Taller Gerardito nacio en San Manuel, Cortes, fruto de la pasion y el conocimiento tecnico de <span class="text-zinc-200 font-medium">Gerardo Garcia</span>. Un pequeno espacio orientado a la mecanica general.
+            </p>
+          </div>
 
-        <p class="text-neutral-600 leading-relaxed mb-4">
-          A lo largo de los años, el taller fue incorporando equipo especializado como escáneres de diagnóstico, osciloscopios, cámaras endoscópicas y bancos de pruebas, convirtiéndose en uno de los pocos talleres de la zona capaz de diagnosticar con certeza fallas electrónicas complejas.
-        </p>
+          <div class="relative">
+            <div class="absolute -left-[41px] top-1 h-4 w-4 rounded-full bg-brand-red border-4 border-brand-dark"></div>
+            <p class="text-xs font-mono uppercase tracking-wider text-brand-red mb-1">Evolucion</p>
+            <p class="text-zinc-400 leading-relaxed text-sm">
+              Incorporacion de equipo especializado: escaner de diagnostico, osciloscopio, camara endoscopica y banco de pruebas. Uno de los pocos talleres de la zona con capacidad de diagnostico electronico completo.
+            </p>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -left-[41px] top-1 h-4 w-4 rounded-full bg-brand-red border-4 border-brand-dark"></div>
+            <p class="text-xs font-mono uppercase tracking-wider text-brand-red mb-1">Hoy</p>
+            <p class="text-zinc-400 leading-relaxed text-sm">
+              Referente en diagnostico electronico automotriz en el corredor industrial de Cortes, atendiendo mas de 9 marcas con certeza diagnostica.
+            </p>
+          </div>
+        </div>
 
         <!-- Mission -->
-        <div class="rounded-xl bg-brand-dark/5 border border-brand-dark/10 p-6">
-          <h3 class="text-lg font-semibold text-brand-dark mb-2">Nuestra Misión</h3>
-          <p class="text-neutral-600 leading-relaxed text-sm">
-            Brindar servicios de mecánica automotriz general, diagnóstico electrónico especializado y mantenimiento preventivo y correctivo con los más altos estándares de calidad, honestidad y precisión, garantizando la seguridad vial de cada uno de nuestros clientes.
+        <div class="mt-10 rounded-xl bg-brand-dark-mid/50 border border-zinc-700/50 p-6">
+          <h3 class="text-base font-semibold text-white mb-2">Nuestra Mision</h3>
+          <p class="text-zinc-400 leading-relaxed text-sm">
+            Brindar servicios de mecanica automotriz y diagnostico electronico con los mas altos estandares de calidad, honestidad y precision, garantizando la seguridad vial de cada cliente.
           </p>
         </div>
       </div>
 
-      <!-- Visual / Stats side -->
+      <!-- Stats + Founder + Vision -->
       <div data-animate="fade-up">
-        <div class="grid grid-cols-2 gap-4">
-          <div class="rounded-2xl bg-white p-6 text-center shadow-sm border border-neutral-200">
-            <div class="text-4xl font-extrabold text-brand-red mb-1">10+</div>
-            <div class="text-sm text-neutral-600 font-medium">Años de Experiencia</div>
+        <!-- Founder placeholder -->
+        <div class="mb-8 flex items-center gap-4">
+          <div class="h-16 w-16 rounded-full bg-gradient-to-br from-zinc-700 to-zinc-800 flex items-center justify-center text-xl font-bold text-zinc-400 ring-2 ring-brand-red/20">
+            GG
           </div>
-          <div class="rounded-2xl bg-white p-6 text-center shadow-sm border border-neutral-200">
-            <div class="text-4xl font-extrabold text-brand-red mb-1">9+</div>
-            <div class="text-sm text-neutral-600 font-medium">Marcas Atendidas</div>
+          <div>
+            <p class="text-white font-semibold">Gerardo Garcia</p>
+            <p class="text-zinc-500 text-sm">Fundador & Tecnico Principal</p>
           </div>
-          <div class="rounded-2xl bg-white p-6 text-center shadow-sm border border-neutral-200">
-            <div class="text-4xl font-extrabold text-brand-red mb-1">4</div>
-            <div class="text-sm text-neutral-600 font-medium">Equipos de Diagnóstico</div>
+        </div>
+
+        <!-- Stats grid -->
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <div class="rounded-xl bg-brand-dark-mid/50 border border-zinc-700/50 p-6 text-center">
+            <div class="text-4xl font-extrabold text-brand-red mb-1" data-animate="counter" data-target="10" data-suffix="+">10+</div>
+            <div class="text-sm text-zinc-400 font-medium">Anos de Experiencia</div>
+          </div>
+          <div class="rounded-xl bg-brand-dark-mid/50 border border-zinc-700/50 p-6 text-center">
+            <div class="text-4xl font-extrabold text-brand-red mb-1" data-animate="counter" data-target="9" data-suffix="+">9+</div>
+            <div class="text-sm text-zinc-400 font-medium">Marcas Atendidas</div>
+          </div>
+          <div class="rounded-xl bg-brand-dark-mid/50 border border-zinc-700/50 p-6 text-center">
+            <div class="text-4xl font-extrabold text-brand-red mb-1" data-animate="counter" data-target="4" data-suffix="">4</div>
+            <div class="text-sm text-zinc-400 font-medium">Equipos de Diagnostico</div>
+          </div>
+          <div class="rounded-xl bg-brand-dark-mid/50 border border-zinc-700/50 p-6 text-center">
+            <div class="text-4xl font-extrabold text-brand-red mb-1" data-animate="counter" data-target="6" data-suffix="">6</div>
+            <div class="text-sm text-zinc-400 font-medium">Servicios Especializados</div>
           </div>
         </div>
 
         <!-- Vision -->
-        <div class="mt-6 rounded-xl bg-brand-dark p-6 text-white">
-          <h3 class="text-lg font-semibold mb-2">Visión 2030</h3>
-          <p class="text-white/80 leading-relaxed text-sm">
-            Ser reconocidos como el taller mecánico de mayor confianza y tecnología en el corredor industrial de Cortés, expandiendo nuestros servicios de diagnóstico electrónico avanzado a nivel regional.
+        <div class="rounded-xl bg-gradient-to-br from-brand-red/10 to-brand-dark-mid/50 border border-brand-red/20 p-6">
+          <h3 class="text-base font-semibold text-white mb-2">Vision 2030</h3>
+          <p class="text-zinc-400 leading-relaxed text-sm">
+            Ser reconocidos como el taller mecanico de mayor confianza y tecnologia en el corredor industrial de Cortes, expandiendo nuestros servicios de diagnostico electronico avanzado a nivel regional.
           </p>
         </div>
       </div>

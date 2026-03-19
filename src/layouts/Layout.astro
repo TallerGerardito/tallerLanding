@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'Taller Gerardito — Mecánica y Diagnóstico Electrónico Automotriz | San Manuel, Cortés',
-  description = 'Taller mecánico en San Manuel, Cortés con más de 10 años de experiencia. Diagnóstico electrónico especializado, mecánica general, transmisiones, A/C. Llámenos al 8963-8660.',
+  title = 'Taller Gerardito — Mecanica y Diagnostico Electronico Automotriz | San Manuel, Cortes',
+  description = 'Taller mecanico en San Manuel, Cortes con mas de 10 anos de experiencia. Diagnostico electronico especializado, mecanica general, transmisiones, A/C. Llamenos al 8963-8660.',
 } = Astro.props;
 ---
 
@@ -24,13 +24,13 @@ const {
     <!-- SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="taller mecánico San Manuel, diagnóstico electrónico automotriz, mecánico Cortés Honduras, taller Gerardito" />
+    <meta name="keywords" content="taller mecanico San Manuel, diagnostico electronico automotriz, mecanico Cortes Honduras, taller Gerardito" />
     <link rel="canonical" href="https://tallergerardito.com/" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_HN" />
-    <meta property="og:title" content="Taller Gerardito — Diagnóstico Electrónico Automotriz" />
+    <meta property="og:title" content="Taller Gerardito — Diagnostico Electronico Automotriz" />
     <meta property="og:description" content={description} />
     <meta property="og:url" content="https://tallergerardito.com/" />
     <meta property="og:site_name" content="Taller Gerardito" />
@@ -38,20 +38,20 @@ const {
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Taller Gerardito — Diagnóstico Electrónico Automotriz" />
+    <meta name="twitter:title" content="Taller Gerardito — Diagnostico Electronico Automotriz" />
     <meta name="twitter:description" content={description} />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "AutoRepair",
       "name": "Taller Gerardito",
-      "description": "Taller mecánico especializado en diagnóstico electrónico automotriz en San Manuel, Cortés, Honduras.",
+      "description": "Taller mecanico especializado en diagnostico electronico automotriz en San Manuel, Cortes, Honduras.",
       "url": "https://tallergerardito.com",
       "telephone": "+50489638660",
       "email": "gerarnoe21@gmail.com",
@@ -59,7 +59,7 @@ const {
         "@type": "PostalAddress",
         "streetAddress": "2 cuadras arriba del Carwash Mendoza",
         "addressLocality": "San Manuel",
-        "addressRegion": "Cortés",
+        "addressRegion": "Cortes",
         "addressCountry": "HN"
       },
       "geo": {
@@ -78,17 +78,17 @@ const {
       "sameAs": [],
       "founder": {
         "@type": "Person",
-        "name": "Gerardo García"
+        "name": "Gerardo Garcia"
       },
       "foundingDate": "2015",
       "areaServed": ["San Manuel", "Choloma", "Villanueva", "San Pedro Sula"]
     })} />
 
   </head>
-  <body class="bg-neutral-50 text-neutral-600 antialiased">
+  <body class="bg-brand-dark text-brand-gray-light antialiased">
     <slot />
 
-    <!-- GSAP Initialization (bundled via npm) -->
+    <!-- GSAP Initialization -->
     <script>
       import { gsap } from "gsap";
       import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -101,6 +101,7 @@ const {
         // Hero entrance (immediate, no scroll trigger)
         gsap.from("[data-animate='hero-title']", { y: 40, opacity: 0, duration: 0.8, ease: "power3.out" });
         gsap.from("[data-animate='hero-subtitle']", { y: 30, opacity: 0, duration: 0.8, delay: 0.2, ease: "power3.out" });
+        gsap.from("[data-animate='hero-badge']", { y: 20, opacity: 0, duration: 0.6, delay: 0.1, ease: "power2.out" });
         gsap.from("[data-animate='hero-cta']", { scale: 0.8, opacity: 0, duration: 0.6, delay: 0.5, ease: "back.out(1.7)" });
 
         // Scroll-triggered fade-up
@@ -127,6 +128,26 @@ const {
             scale: 0.8, opacity: 0, duration: 0.5, ease: "back.out(1.7)",
             immediateRender: false,
             scrollTrigger: { trigger: el, start: "top 85%", once: true }
+          });
+        });
+
+        // Counter animations
+        document.querySelectorAll("[data-animate='counter']").forEach((el) => {
+          const target = parseInt(el.getAttribute("data-target") || "0");
+          const suffix = el.getAttribute("data-suffix") || "";
+          el.textContent = "0" + suffix;
+          gsap.to(el, {
+            duration: 2,
+            ease: "power2.out",
+            scrollTrigger: { trigger: el, start: "top 85%", once: true },
+            onUpdate: function() {
+              const progress = this.progress();
+              const current = Math.round(target * progress);
+              el.textContent = current + suffix;
+            },
+            onComplete: function() {
+              el.textContent = target + suffix;
+            }
           });
         });
       }

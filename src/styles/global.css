@@ -1,17 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-dark: #1a1a1a;
-  --color-brand-dark-light: #2d2d2d;
-  --color-brand-dark-deep: #111111;
-  --color-brand-red: #cc1a1a;
-  --color-brand-red-light: #e02d2d;
-  --color-brand-gray: #6b6b6b;
+  --color-brand-dark: #09090b;
+  --color-brand-dark-deep: #030305;
+  --color-brand-dark-light: #18181b;
+  --color-brand-dark-mid: #27272a;
+  --color-brand-red: #dc2626;
+  --color-brand-red-light: #ef4444;
+  --color-brand-red-glow: #dc262633;
+  --color-brand-gray: #a1a1aa;
+  --color-brand-gray-light: #f4f4f5;
 
   --font-family-sans: "Montserrat", system-ui, sans-serif;
 
-  --text-hero: clamp(2.5rem, 5vw, 4rem);
+  --text-hero: clamp(2.8rem, 6vw, 4.5rem);
   --text-section-title: clamp(1.75rem, 3vw, 2.5rem);
+  --text-section-subtitle: clamp(1rem, 1.5vw, 1.125rem);
 }
 
 html {
@@ -21,23 +25,47 @@ html {
 
 body {
   font-family: var(--font-family-sans);
-  color: #525252;
+  color: var(--color-brand-gray-light);
   line-height: 1.6;
-  background-color: #fafafa;
+  background-color: var(--color-brand-dark);
 }
 
-@keyframes whatsapp-pulse {
+/* Marquee animation */
+@keyframes marquee-scroll {
   0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
-  }
-  70% {
-    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    transform: translateX(0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 30s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+/* WhatsApp pulse */
+@keyframes whatsapp-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
   }
 }
 
 .animate-whatsapp-pulse {
-  animation: whatsapp-pulse 2s infinite;
+  animation: whatsapp-pulse 2.5s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-whatsapp-pulse {
+    animation: none;
+  }
 }
