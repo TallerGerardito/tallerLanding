@@ -1,0 +1,16 @@
+{
+  "name": "Taller Gerardito — Mecanica y Diagnostico Electronico",
+  "short_name": "Taller Gerardito",
+  "description": "Taller mecanico en San Manuel, Cortes. Diagnostico electronico automotriz especializado.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#dc2626",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

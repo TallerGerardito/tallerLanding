@@ -10,6 +10,8 @@ const {
   title = 'Taller Gerardito — Mecanica y Diagnostico Electronico Automotriz | San Manuel, Cortes',
   description = 'Taller mecanico en San Manuel, Cortes con mas de 10 anos de experiencia. Diagnostico electronico especializado, mecanica general, transmisiones, A/C. Llamenos al 8963-8660.',
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, 'https://tallergerardito.com');
 ---
 
 <!doctype html>
@@ -17,41 +19,58 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- SEO -->
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#dc2626" />
+
+    <!-- SEO Core -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="taller mecanico San Manuel, diagnostico electronico automotriz, mecanico Cortes Honduras, taller Gerardito" />
-    <link rel="canonical" href="https://tallergerardito.com/" />
+    <meta name="keywords" content="taller mecanico San Manuel, diagnostico electronico automotriz, mecanico Cortes Honduras, taller Gerardito, cambio de aceite San Manuel, afinamiento de motor Honduras, diagnostico de fallas automotriz, reparacion de transmision Cortes, electricidad automotriz San Manuel, taller mecanico cerca de mi" />
+    <link rel="canonical" href={canonicalURL.href} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Taller Gerardito" />
+    <meta name="geo.region" content="HN-CR" />
+    <meta name="geo.placename" content="San Manuel, Cortes" />
+    <meta name="geo.position" content="15.4;-87.92" />
+    <meta name="ICBM" content="15.4, -87.92" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_HN" />
-    <meta property="og:title" content="Taller Gerardito — Diagnostico Electronico Automotriz" />
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content="https://tallergerardito.com/" />
+    <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:site_name" content="Taller Gerardito" />
     <meta property="og:image" content="https://tallergerardito.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Taller Gerardito — Diagnostico Electronico Automotriz en San Manuel, Cortes" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Taller Gerardito — Diagnostico Electronico Automotriz" />
+    <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://tallergerardito.com/og-image.png" />
+    <meta name="twitter:image:alt" content="Taller Gerardito — Diagnostico Electronico Automotriz" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
 
-    <!-- Schema.org JSON-LD -->
+    <!-- Schema.org JSON-LD: AutoRepair -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "AutoRepair",
       "name": "Taller Gerardito",
-      "description": "Taller mecanico especializado en diagnostico electronico automotriz en San Manuel, Cortes, Honduras.",
+      "alternateName": "Taller Gerardito San Manuel",
+      "description": "Taller mecanico especializado en diagnostico electronico automotriz en San Manuel, Cortes, Honduras. Mas de 10 anos de experiencia.",
       "url": "https://tallergerardito.com",
       "telephone": "+50489638660",
       "email": "gerarnoe21@gmail.com",
@@ -75,13 +94,95 @@ const {
       },
       "priceRange": "$$",
       "image": "https://tallergerardito.com/og-image.png",
-      "sameAs": [],
+      "logo": "https://tallergerardito.com/logo.jpeg",
+      "sameAs": ["https://www.facebook.com/share/18Txscgia6/?mibextid=wwXIfr"],
       "founder": {
         "@type": "Person",
         "name": "Gerardo Garcia"
       },
       "foundingDate": "2015",
-      "areaServed": ["San Manuel", "Choloma", "Villanueva", "San Pedro Sula"]
+      "areaServed": [
+        { "@type": "City", "name": "San Manuel" },
+        { "@type": "City", "name": "Choloma" },
+        { "@type": "City", "name": "Villanueva" },
+        { "@type": "City", "name": "San Pedro Sula" },
+        { "@type": "City", "name": "La Lima" },
+        { "@type": "City", "name": "El Progreso" }
+      ],
+      "paymentAccepted": "Efectivo, Transferencia Bancaria, Tigo Money",
+      "currenciesAccepted": "HNL",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Taller Gerardito",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Cambio de Aceite", "description": "Reemplazo de aceite del motor y filtro con revision de niveles de liquidos" },
+            "price": "1000",
+            "priceCurrency": "HNL"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Diagnostico de Fallas", "description": "Diagnostico con escaner automotriz y revision manual para detectar problemas" },
+            "price": "800",
+            "priceCurrency": "HNL"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Afinamiento de Motor", "description": "Cambio de bujias, filtros, limpieza de inyectores y revision del sistema de encendido" },
+            "price": "1200",
+            "priceCurrency": "HNL"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Cambio de Bateria", "description": "Instalacion de bateria nueva con revision del sistema de carga" },
+            "price": "200",
+            "priceCurrency": "HNL"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type": "Service", "name": "Reparacion General", "description": "Reparacion de fallas mecanicas, electricas o electronicas segun diagnostico" }
+          }
+        ]
+      }
+    })} />
+
+    <!-- Schema.org JSON-LD: FAQ -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Que tipos de vehiculos atienden en Taller Gerardito?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Atendemos todo tipo de vehiculos livianos de pasajeros y SUV de cualquier marca: Toyota, Nissan, Honda, Mazda, Hyundai, Mitsubishi, Jeep, Ford, Chevrolet y mas, tanto motores gasolina como diesel." }
+        },
+        {
+          "@type": "Question",
+          "name": "Donde estan ubicados y cual es su horario de atencion?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Estamos ubicados en San Manuel, Cortes, 2 cuadras arriba del Carwash Mendoza. Atendemos de lunes a sabado de 8:00 a.m. a 5:00 p.m." }
+        },
+        {
+          "@type": "Question",
+          "name": "El diagnostico de fallas tiene algun costo?",
+          "acceptedAnswer": { "@type": "Answer", "text": "El diagnostico tiene un costo de L. 800. Sin embargo, si el cliente decide realizar la reparacion con nosotros, el diagnostico es completamente GRATIS." }
+        },
+        {
+          "@type": "Question",
+          "name": "Ofrecen garantia en sus servicios?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Si. La garantia aplica sobre la mano de obra realizada por el taller y tiene una duracion de 10 dias o 20 kilometros, lo que ocurra primero." }
+        },
+        {
+          "@type": "Question",
+          "name": "Cuanto cuesta un cambio de aceite?",
+          "acceptedAnswer": { "@type": "Answer", "text": "El cambio de aceite tiene un precio desde L. 1,000. Incluye reemplazo de aceite y filtro, mas revision de niveles de liquido de frenos, refrigerante y direccion hidraulica." }
+        },
+        {
+          "@type": "Question",
+          "name": "Cuanto cuesta un afinamiento de motor?",
+          "acceptedAnswer": { "@type": "Answer", "text": "El afinamiento de motor tiene un precio de L. 1,200 a L. 2,500 dependiendo del tipo de vehiculo y numero de cilindros. Toma entre 2 y 4 horas." }
+        }
+      ]
     })} />
 
   </head>
