@@ -4,25 +4,29 @@ const equipment = [
     name: 'Escaner Automotriz',
     subtitle: 'OBD-II MULTIMARCA',
     description: 'Lectura de codigos, diagnostico de modulos y analisis de datos en tiempo real de todos los sistemas del vehiculo.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 10 10 7 13 12 17 8"/></svg>`,
+    detail: 'Compatible con todas las marcas desde 1996',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 10 10 7 13 12 17 8"/></svg>`,
   },
   {
     name: 'Osciloscopio',
     subtitle: 'ANALISIS DE SENALES',
     description: 'Analisis de senales electricas en tiempo real para diagnostico preciso de sensores, actuadores y circuitos.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+    detail: 'Precision de microsegundos en cada lectura',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
   },
   {
     name: 'Camara Endoscopica',
     subtitle: 'INSPECCION INTERNA',
     description: 'Inspeccion interna de motores sin desarmar: cilindros, valvulas y componentes internos con precision visual.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`,
+    detail: 'Sin necesidad de desarmar el motor',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`,
   },
   {
     name: 'Banco de Pruebas',
     subtitle: 'TESTING ESPECIALIZADO',
     description: 'Pruebas para inyectores, alternadores y componentes electricos antes de cualquier reparacion.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>`,
+    detail: 'Verificacion antes de instalar cualquier pieza',
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>`,
   },
 ];
 ---
@@ -34,23 +38,49 @@ const equipment = [
       <p class="text-section-subtitle text-zinc-400 max-w-2xl mx-auto">
         Tecnologia de ultima generacion que garantiza certeza en cada diagnostico.
       </p>
-      <!-- Real equipment photo -->
-      <div class="mt-8 max-w-sm mx-auto rounded-xl overflow-hidden border border-zinc-700/50">
-        <img src="/images/gallery/diagnostico-electronico.jpg" alt="Multimetro digital en diagnostico automotriz" class="w-full h-auto object-cover" loading="lazy" />
-      </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5" data-animate="stagger">
-      {equipment.map((item) => (
-        <div class="group rounded-2xl bg-brand-dark-mid/30 p-6 lg:p-8 border border-zinc-700/50 transition-all duration-300 hover:border-brand-red/30 hover:shadow-lg hover:shadow-brand-red/5">
-          <div class="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red" data-animate="scale-in">
-            <Fragment set:html={item.icon} />
+    <!-- 2 cards | Photo | 2 cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-5" data-animate="stagger">
+      <!-- Left column: 2 cards -->
+      <div class="flex flex-col gap-4 lg:gap-5">
+        {equipment.slice(0, 2).map((item) => (
+          <div class="group flex-1 rounded-2xl bg-brand-dark-mid/30 p-6 lg:p-8 border border-zinc-700/50 transition-all duration-300 hover:border-brand-red/30 hover:shadow-lg hover:shadow-brand-red/5 text-center">
+            <div class="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red group-hover:bg-brand-red/20 group-hover:shadow-lg group-hover:shadow-brand-red/10 transition-all duration-300">
+              <Fragment set:html={item.icon} />
+            </div>
+            <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-500 mb-2">{item.subtitle}</p>
+            <h3 class="text-lg font-semibold text-white mb-2">{item.name}</h3>
+            <p class="text-zinc-400 leading-relaxed text-sm mb-3">{item.description}</p>
+            <span class="inline-block text-xs text-brand-red/80 font-medium bg-brand-red/5 rounded-full px-3 py-1">{item.detail}</span>
           </div>
-          <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-500 mb-2">{item.subtitle}</p>
-          <h3 class="text-lg font-semibold text-white mb-3">{item.name}</h3>
-          <p class="text-zinc-400 leading-relaxed text-sm">{item.description}</p>
+        ))}
+      </div>
+
+      <!-- Center: vertical photo -->
+      <div class="rounded-2xl overflow-hidden border border-zinc-700/50 relative group">
+        <img src="/images/gallery/diagnostico-electronico.jpg" alt="Multimetro digital en diagnostico automotriz" class="w-full h-full min-h-[350px] object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 text-center">
+          <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-brand-red mb-1">Herramientas Reales</p>
+          <p class="text-white font-semibold">Equipo unico en la zona</p>
         </div>
-      ))}
+      </div>
+
+      <!-- Right column: 2 cards -->
+      <div class="flex flex-col gap-4 lg:gap-5">
+        {equipment.slice(2, 4).map((item) => (
+          <div class="group flex-1 rounded-2xl bg-brand-dark-mid/30 p-6 lg:p-8 border border-zinc-700/50 transition-all duration-300 hover:border-brand-red/30 hover:shadow-lg hover:shadow-brand-red/5 text-center">
+            <div class="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red group-hover:bg-brand-red/20 group-hover:shadow-lg group-hover:shadow-brand-red/10 transition-all duration-300">
+              <Fragment set:html={item.icon} />
+            </div>
+            <p class="text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-500 mb-2">{item.subtitle}</p>
+            <h3 class="text-lg font-semibold text-white mb-2">{item.name}</h3>
+            <p class="text-zinc-400 leading-relaxed text-sm mb-3">{item.description}</p>
+            <span class="inline-block text-xs text-brand-red/80 font-medium bg-brand-red/5 rounded-full px-3 py-1">{item.detail}</span>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>

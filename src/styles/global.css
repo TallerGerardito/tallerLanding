@@ -11,7 +11,7 @@
   --color-brand-gray: #a1a1aa;
   --color-brand-gray-light: #f4f4f5;
 
-  --font-family-sans: "Montserrat", system-ui, sans-serif;
+  --font-family-sans: "Plus Jakarta Sans", system-ui, sans-serif;
 
   --text-hero: clamp(2.8rem, 6vw, 4.5rem);
   --text-section-title: clamp(1.75rem, 3vw, 2.5rem);

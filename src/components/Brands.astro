@@ -26,20 +26,16 @@ const brands = [
       <div class="flex animate-marquee w-max">
         <!-- First set -->
         {brands.map((brand) => (
-          <div class="flex flex-col items-center justify-center gap-3 mx-6 lg:mx-10 shrink-0">
-            <div class="flex h-16 w-24 items-center justify-center rounded-xl bg-brand-dark-mid/30 border border-zinc-700/30 p-3 grayscale hover:grayscale-0 transition-all duration-300 hover:border-zinc-600">
-              <img src={brand.icon} alt={brand.name} class="h-8 w-auto brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
-            </div>
-            <span class="text-xs font-medium text-zinc-500">{brand.name}</span>
+          <div class="flex flex-col items-center justify-center gap-2 mx-8 lg:mx-12 shrink-0 group">
+            <img src={brand.icon} alt={brand.name} class="h-10 w-auto brightness-0 invert opacity-40 group-hover:opacity-100 group-hover:drop-shadow-[0_0_8px_rgba(220,38,38,0.3)] transition-all duration-300" />
+            <span class="text-xs font-medium text-zinc-600 group-hover:text-zinc-300 transition-colors">{brand.name}</span>
           </div>
         ))}
         <!-- Duplicate set for seamless loop -->
         {brands.map((brand) => (
-          <div class="flex flex-col items-center justify-center gap-3 mx-6 lg:mx-10 shrink-0" aria-hidden="true">
-            <div class="flex h-16 w-24 items-center justify-center rounded-xl bg-brand-dark-mid/30 border border-zinc-700/30 p-3 grayscale hover:grayscale-0 transition-all duration-300 hover:border-zinc-600">
-              <img src={brand.icon} alt="" class="h-8 w-auto brightness-0 invert opacity-60 hover:opacity-100 transition-opacity" />
-            </div>
-            <span class="text-xs font-medium text-zinc-500">{brand.name}</span>
+          <div class="flex flex-col items-center justify-center gap-2 mx-8 lg:mx-12 shrink-0 group" aria-hidden="true">
+            <img src={brand.icon} alt="" class="h-10 w-auto brightness-0 invert opacity-40 group-hover:opacity-100 group-hover:drop-shadow-[0_0_8px_rgba(220,38,38,0.3)] transition-all duration-300" />
+            <span class="text-xs font-medium text-zinc-600 group-hover:text-zinc-300 transition-colors">{brand.name}</span>
           </div>
         ))}
       </div>

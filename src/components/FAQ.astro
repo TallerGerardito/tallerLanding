@@ -1,0 +1,80 @@
+---
+const faqs = [
+  {
+    question: '¿Que tipos de vehiculos atienden en Taller Gerardito?',
+    answer: 'Atendemos todo tipo de vehiculos livianos de pasajeros y SUV de cualquier marca: Toyota, Nissan, Honda, Mazda, Hyundai, Mitsubishi, Jeep, Ford, Chevrolet y mas, tanto motores gasolina como diesel.',
+  },
+  {
+    question: '¿Donde estan ubicados y cual es su horario de atencion?',
+    answer: 'Estamos ubicados en San Manuel, Cortes, 2 cuadras arriba del Carwash Mendoza. Atendemos de lunes a sabado de 8:00 a.m. a 5:00 p.m. No abrimos domingos ni dias feriados nacionales.',
+  },
+  {
+    question: '¿Como puedo agendar una cita?',
+    answer: 'Puede agendar su cita a traves de: (1) nuestro sitio web www.tallergerardito.com, (2) por WhatsApp al numero 8963-8660, o (3) llamando directamente al mismo numero en horario de atencion.',
+  },
+  {
+    question: '¿El diagnostico de fallas tiene algun costo?',
+    answer: 'El diagnostico tiene un costo de L. 800. Sin embargo, si el cliente decide realizar la reparacion con nosotros, el diagnostico es completamente GRATIS. Solo paga si no desea continuar con la reparacion en el taller.',
+  },
+  {
+    question: '¿Ofrecen garantia en sus servicios?',
+    answer: 'Si. La garantia aplica sobre la mano de obra realizada por el taller y tiene una duracion de 10 dias o 20 kilometros, lo que ocurra primero. En el caso de repuestos, la garantia depende del proveedor o fabricante del producto.',
+  },
+  {
+    question: '¿Trabajan con repuestos originales o alternos?',
+    answer: 'Trabajamos con ambos tipos segun el presupuesto y necesidad del cliente. Siempre informamos al cliente sobre las diferencias de calidad y precio antes de proceder, y le dejamos la decision final.',
+  },
+  {
+    question: '¿Puedo devolver un repuesto si ya no lo necesito?',
+    answer: 'Si, aceptamos devoluciones de repuestos siempre que no hayan sido instalados ni manipulados, esten en su empaque original sin danos, se presente la factura de compra y la solicitud se realice dentro de los 3 dias habiles siguientes a la entrega de la factura.',
+  },
+  {
+    question: '¿Cuanto tiempo tarda un afinamiento de motor?',
+    answer: 'Un afinamiento de motor estandar toma entre 2 y 4 horas dependiendo del tipo de vehiculo y el estado de los componentes. Siempre informamos al cliente el tiempo estimado antes de iniciar el servicio.',
+  },
+  {
+    question: '¿Aceptan pagos digitales o solo efectivo?',
+    answer: 'Aceptamos pagos en efectivo y transferencias bancarias. Para citas agendadas en linea, se puede coordinar un anticipo para garantizar el espacio de atencion.',
+  },
+  {
+    question: '¿El precio puede cambiar durante la reparacion?',
+    answer: 'Si, en algunos casos durante la reparacion se detectan fallas adicionales no contempladas inicialmente. En ese caso, el cliente siempre sera informado antes de realizar cualquier trabajo extra, y no se procedera sin su autorizacion previa.',
+  },
+  {
+    question: '¿Que pasa si el problema regresa despues de la reparacion?',
+    answer: 'Si la falla regresa dentro del periodo de garantia (10 dias o 20 km) por la misma causa, revisamos y reparamos sin costo adicional de mano de obra. La garantia no aplica si el vehiculo fue intervenido por un tercero o si se detecta mal uso del vehiculo.',
+  },
+  {
+    question: '¿Puedo quedarme en el taller mientras reparan mi vehiculo?',
+    answer: 'Si, el cliente puede permanecer en el area de espera del taller durante el servicio. Para reparaciones de mayor duracion, recomendamos dejar el vehiculo y recibir actualizaciones directamente por WhatsApp al numero 8963-8660.',
+  },
+];
+---
+
+<section id="faq" class="py-20 lg:py-28 bg-brand-dark">
+  <div class="mx-auto max-w-3xl px-4 lg:px-8">
+    <div class="text-center mb-16" data-animate="fade-up">
+      <h2 class="text-section-title font-bold text-white mb-4">Preguntas Frecuentes</h2>
+      <p class="text-section-subtitle text-zinc-400 max-w-2xl mx-auto">
+        Resolvemos tus dudas antes de visitarnos.
+      </p>
+    </div>
+
+    <div class="space-y-3" data-animate="stagger">
+      {faqs.map((faq, index) => (
+        <details class="group rounded-xl bg-brand-dark-mid/30 border border-zinc-700/50 transition-all duration-300 hover:border-brand-red/20">
+          <summary class="flex cursor-pointer items-center justify-between gap-4 p-5 text-white font-medium text-sm lg:text-base list-none [&::-webkit-details-marker]:hidden">
+            <span>{faq.question}</span>
+            <svg class="h-5 w-5 shrink-0 text-zinc-500 transition-transform duration-300 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </summary>
+          <div class="px-5 pb-5 text-zinc-400 text-sm leading-relaxed border-t border-zinc-700/30 pt-4">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

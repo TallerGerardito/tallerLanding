@@ -1,40 +1,36 @@
 ---
+const featured = {
+  title: 'Diagnostico de Fallas',
+  description: 'Escaner automotriz y revision manual para detectar problemas en motor, sensores o sistema electrico. Aplica para vehiculos con puerto OBD-II (desde 1996).',
+  highlight: 'GRATIS si repara con nosotros',
+  price: 'L. 800',
+  icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-8 w-8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 10 10 7 13 12 17 8"/></svg>`,
+};
+
 const services = [
   {
-    title: 'Mecanica General',
-    description: 'Mantenimiento preventivo y correctivo, cambio de aceite, frenos, suspension y direccion para todo tipo de vehiculos.',
+    title: 'Cambio de Aceite',
+    description: 'Reemplazo de aceite del motor y filtro. Revision de niveles de liquido de frenos, refrigerante y direccion hidraulica.',
+    price: 'Desde L. 1,000',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
-    span: '',
   },
   {
-    title: 'Diagnostico Electronico',
-    description: 'Diagnostico garantizado con escaner y osciloscopio para motores de gasolina y diesel. Certeza antes de cualquier intervencion.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><polyline points="7 10 10 7 13 12 17 8"/></svg>`,
-    span: 'md:col-span-2',
-  },
-  {
-    title: 'Transmisiones',
-    description: 'Reparacion y mantenimiento de transmisiones automaticas y mecanicas con diagnostico preciso.',
+    title: 'Afinamiento de Motor',
+    description: 'Cambio de bujias, filtros, limpieza de inyectores y revision del sistema de encendido. Precio varia segun cilindros.',
+    price: 'L. 1,200 – L. 2,500',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>`,
-    span: '',
   },
   {
-    title: 'Electricidad Automotriz',
-    description: 'Diagnostico y reparacion de sistemas electricos: alternadores, arrancadores, cableado y sistemas de carga.',
+    title: 'Cambio de Bateria',
+    description: 'Instalacion de bateria nueva con revision del sistema de carga, prueba del arranque y verificacion de voltaje.',
+    price: 'L. 200 – L. 400 (mano de obra)',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
-    span: '',
   },
   {
-    title: 'Electronica Avanzada',
-    description: 'Sistemas de inyeccion, sensores, modulos de control electronico y programacion de ECU con equipo de ultima generacion.',
+    title: 'Reparacion General',
+    description: 'Reparacion de fallas mecanicas, electricas o electronicas segun diagnostico. Diagnostico GRATIS si repara con nosotros.',
+    price: 'Segun diagnostico',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>`,
-    span: 'md:col-span-2',
-  },
-  {
-    title: 'Aire Acondicionado',
-    description: 'Diagnostico, recarga, reparacion y mantenimiento del sistema de aire acondicionado automotriz.',
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="M12 2v20M2 12h20M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg>`,
-    span: '',
   },
 ];
 ---
@@ -48,14 +44,46 @@ const services = [
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5" data-animate="stagger">
-      {services.map((service) => (
-        <div class={`group rounded-2xl bg-brand-dark-mid/50 p-6 lg:p-8 border border-zinc-700/50 transition-all duration-300 hover:border-brand-red/30 hover:shadow-lg hover:shadow-brand-red/5 hover:scale-[1.02] ${service.span}`}>
-          <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red transition-colors">
-            <Fragment set:html={service.icon} />
+    <!-- Featured service: Diagnostico -->
+    <div class="mb-5 rounded-2xl bg-gradient-to-r from-brand-red/10 via-brand-dark-mid/50 to-brand-dark-mid/30 border border-brand-red/20 p-6 lg:p-8 transition-all duration-300 hover:border-brand-red/40 hover:shadow-lg hover:shadow-brand-red/10 group" data-animate="fade-up">
+      <div class="flex flex-col lg:flex-row lg:items-center gap-6">
+        <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-brand-red/15 text-brand-red group-hover:bg-brand-red/25 transition-all duration-300">
+          <Fragment set:html={featured.icon} />
+        </div>
+        <div class="flex-1">
+          <div class="flex flex-wrap items-center gap-3 mb-2">
+            <h3 class="text-xl font-bold text-white">{featured.title}</h3>
+            <span class="text-brand-red font-bold text-lg">{featured.price}</span>
           </div>
-          <h3 class="text-lg font-semibold text-white mb-2">{service.title}</h3>
-          <p class="text-zinc-400 leading-relaxed text-sm">{service.description}</p>
+          <p class="text-zinc-400 leading-relaxed text-sm mb-3">{featured.description}</p>
+          <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-green-400 bg-green-400/10 rounded-full px-3 py-1">
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            {featured.highlight}
+          </span>
+        </div>
+        <a href="#contacto" class="shrink-0 inline-flex items-center gap-2 rounded-xl bg-brand-red px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-brand-red-light hover:scale-105 hover:shadow-lg hover:shadow-brand-red/25">
+          Agendar Cita
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- 4 service cards in 2x2 grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5" data-animate="stagger">
+      {services.map((service) => (
+        <div class="group rounded-2xl bg-brand-dark-mid/50 p-6 lg:p-8 border border-zinc-700/50 transition-all duration-300 hover:border-brand-red/30 hover:shadow-lg hover:shadow-brand-red/5 hover:scale-[1.01]">
+          <div class="flex gap-5">
+            <div class="shrink-0 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red group-hover:bg-brand-red/20 transition-all duration-300">
+              <Fragment set:html={service.icon} />
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-2 mb-1">
+                <h3 class="text-lg font-semibold text-white">{service.title}</h3>
+              </div>
+              <span class="inline-block text-brand-red font-semibold text-sm mb-2">{service.price}</span>
+              <p class="text-zinc-400 leading-relaxed text-sm">{service.description}</p>
+            </div>
+          </div>
         </div>
       ))}
     </div>

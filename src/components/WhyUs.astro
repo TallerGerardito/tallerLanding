@@ -33,13 +33,16 @@ const advantages = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5" data-animate="stagger">
-      {advantages.map((item) => (
-        <div class="group rounded-2xl bg-brand-dark-mid/30 p-6 lg:p-8 border border-zinc-700/50 border-t-2 border-t-brand-red/60 transition-all duration-300 hover:border-brand-red/30 hover:shadow-lg hover:shadow-brand-red/5 hover:scale-[1.02] text-center">
-          <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red">
-            <Fragment set:html={item.icon} />
+      {advantages.map((item, index) => (
+        <div class="group relative rounded-2xl bg-brand-dark-mid/30 p-6 lg:p-8 border border-zinc-700/50 border-t-2 border-t-brand-red/60 transition-all duration-300 hover:border-brand-red/30 hover:shadow-lg hover:shadow-brand-red/5 hover:scale-[1.02] text-center overflow-hidden">
+          <span class="absolute top-3 right-4 text-5xl font-extrabold text-zinc-700/20 font-mono select-none" aria-hidden="true">0{index + 1}</span>
+          <div class="relative z-10">
+            <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red group-hover:bg-brand-red/20 group-hover:shadow-lg group-hover:shadow-brand-red/10 transition-all duration-300">
+              <Fragment set:html={item.icon} />
+            </div>
+            <h3 class="text-lg font-semibold text-white mb-2">{item.title}</h3>
+            <p class="text-zinc-400 leading-relaxed text-sm">{item.description}</p>
           </div>
-          <h3 class="text-lg font-semibold text-white mb-2">{item.title}</h3>
-          <p class="text-zinc-400 leading-relaxed text-sm">{item.description}</p>
         </div>
       ))}
     </div>
