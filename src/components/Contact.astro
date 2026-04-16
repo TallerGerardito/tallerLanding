@@ -1,20 +1,20 @@
 ---
 const contactInfo = [
   {
-    label: 'Telefono / WhatsApp',
+    label: 'Teléfono / WhatsApp',
     value: '8963-8660',
     href: 'tel:+50489638660',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>`,
   },
   {
-    label: 'Correo Electronico',
+    label: 'Correo Electrónico',
     value: 'gerarnoe21@gmail.com',
     href: 'mailto:gerarnoe21@gmail.com',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`,
   },
   {
-    label: 'Direccion',
-    value: 'San Manuel, Cortes — 2 cuadras arriba del Carwash Mendoza',
+    label: 'Dirección',
+    value: 'San Manuel, Cortés — 2 cuadras arriba del Carwash Mendoza',
     href: '#mapa',
     icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>`,
   },
@@ -23,9 +23,9 @@ const contactInfo = [
 const services = [
   'Cambio de Aceite',
   'Afinamiento de Motor',
-  'Diagnostico de Fallas',
-  'Cambio de Bateria',
-  'Reparacion General',
+  'Diagnóstico de Fallas',
+  'Cambio de Batería',
+  'Reparación General',
   'Otro',
 ];
 ---
@@ -50,7 +50,7 @@ const services = [
                 class="w-full rounded-lg bg-brand-dark/60 border border-zinc-700/50 px-4 py-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/30 transition-colors" />
             </div>
             <div>
-              <label for="client-phone" class="block text-sm font-medium text-zinc-300 mb-1.5">Telefono</label>
+              <label for="client-phone" class="block text-sm font-medium text-zinc-300 mb-1.5">Teléfono</label>
               <input type="tel" id="client-phone" name="phone" required placeholder="Ej: 8963-8660"
                 class="w-full rounded-lg bg-brand-dark/60 border border-zinc-700/50 px-4 py-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/30 transition-colors" />
             </div>
@@ -58,7 +58,7 @@ const services = [
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label for="vehicle-info" class="block text-sm font-medium text-zinc-300 mb-1.5">Vehiculo (marca, modelo, año)</label>
+              <label for="vehicle-info" class="block text-sm font-medium text-zinc-300 mb-1.5">Vehículo (marca, modelo, año)</label>
               <input type="text" id="vehicle-info" name="vehicle" required placeholder="Ej: Toyota Corolla 2018"
                 class="w-full rounded-lg bg-brand-dark/60 border border-zinc-700/50 px-4 py-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/30 transition-colors" />
             </div>
@@ -75,7 +75,7 @@ const services = [
           </div>
 
           <div>
-            <label for="problem-desc" class="block text-sm font-medium text-zinc-300 mb-1.5">Descripcion del problema</label>
+            <label for="problem-desc" class="block text-sm font-medium text-zinc-300 mb-1.5">Descripción del problema</label>
             <textarea id="problem-desc" name="problem" rows="3" placeholder="Describa brevemente la falla o servicio que necesita..."
               class="w-full rounded-lg bg-brand-dark/60 border border-zinc-700/50 px-4 py-3 text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/30 transition-colors resize-none"></textarea>
           </div>
@@ -117,8 +117,8 @@ const services = [
               </svg>
             </div>
             <div>
-              <div class="text-xs font-medium text-zinc-500 mb-1">Horario de Atencion</div>
-              <div class="text-sm font-semibold text-white">Lunes a Sabado</div>
+              <div class="text-xs font-medium text-zinc-500 mb-1">Horario de Atención</div>
+              <div class="text-sm font-semibold text-white">Lunes a Sábado</div>
               <div class="text-brand-red font-bold mt-0.5">8:00 a.m. – 5:00 p.m.</div>
             </div>
           </div>
@@ -141,15 +141,15 @@ const services = [
     const problem = (document.getElementById('problem-desc') as HTMLTextAreaElement).value.trim();
 
     const message = [
-      `Hola, me gustaria agendar una cita en Taller Gerardito.`,
+      `Hola, me gustaría agendar una cita en Taller Gerardito.`,
       ``,
       `*Nombre:* ${name}`,
-      `*Telefono:* ${phone}`,
-      `*Vehiculo:* ${vehicle}`,
+      `*Teléfono:* ${phone}`,
+      `*Vehículo:* ${vehicle}`,
       `*Servicio:* ${service}`,
-      problem ? `*Descripcion:* ${problem}` : '',
+      problem ? `*Descripción:* ${problem}` : '',
       ``,
-      `Quedo atento a su confirmacion. Gracias.`,
+      `Quedo atento a su confirmación. Gracias.`,
     ].filter(Boolean).join('\n');
 
     const encoded = encodeURIComponent(message);
